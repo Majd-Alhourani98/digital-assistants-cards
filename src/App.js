@@ -7,27 +7,32 @@ import SiriImage from "./images/siri.png";
 function App() {
   return (
     <div>
-      <h1>Personal Digital Assistants</h1>
-      <ProfileCard
-        title="Alexa"
-        handle="@alexa99"
-        image={AlexaImage}
-        description="I'll help you buy stuff off Amazon"
-      />
+      <header className="banner">
+        <h1>Personal Digital Assistants</h1>
+      </header>
 
-      <ProfileCard
-        title="Cortana"
-        handle="@cortana32"
-        image={CortanaImage}
-        description="Personal assistant by Microsoft"
-      />
+      <main className="cards">
+        <ProfileCard
+          title="Alexa"
+          handle="@alexa99"
+          image={AlexaImage}
+          description="I'll help you buy stuff off Amazon"
+        />
 
-      <ProfileCard
-        title="Siri"
-        handle="@siri01"
-        image={SiriImage}
-        description="I don't get a lot of updates anymore"
-      />
+        <ProfileCard
+          title="Cortana"
+          handle="@cortana32"
+          image={CortanaImage}
+          description="Personal assistant by Microsoft"
+        />
+
+        <ProfileCard
+          title="Siri"
+          handle="@siri01"
+          image={SiriImage}
+          description="I don't get a lot of updates anymore"
+        />
+      </main>
     </div>
   );
 }
