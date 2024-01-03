@@ -1,9 +1,13 @@
 function Card(props) {
+  const title = props.title;
+  const company = props.company;
+  const description = props.description;
+
   return (
     <div>
-      <h2>{props.title}</h2>
-      <p>{props.company}</p>
-      <p>{props.description}</p>
+      <h2>{title}</h2>
+      <p>{company}</p>
+      <p>{description}</p>
     </div>
   );
 }
