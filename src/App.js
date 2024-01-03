@@ -1,13 +1,9 @@
-function Card() {
+function Card(props) {
   return (
     <div>
-      <h2>Siri</h2>
-      <p>Apple</p>
-      <p>
-        Apple's voice assistant built into iPhone, iPad, Mac, and Apple Watch.
-        It can set reminders, send messages, make calls, and control smart home
-        devices.
-      </p>
+      <h2>{props.title}</h2>
+      <p>{props.company}</p>
+      <p>{props.description}</p>
     </div>
   );
 }
@@ -15,31 +11,31 @@ function Card() {
 function App() {
   return (
     <div>
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        title="Siri"
+        company="Apple"
+        description=" Apple's voice assistant built into iPhone, iPad, Mac, and Apple Watch.
+        It can set reminders, send messages, make calls, and control smart home
+        devices."
+      />
+
+      <Card
+        title="Google Assistant"
+        company="Google"
+        description="A conversational assistant available on Android phones, smart
+          speakers, and displays. It answers questions, plays media, and manages
+          your calendar and smart devices."
+      />
+
+      <Card
+        title="Alexa"
+        company="Amazon"
+        description="Amazon's assistant powering Echo devices. It plays music, controls
+          smart home gadgets, creates shopping lists, and supports thousands of
+          third-party 'skills'."
+      />
     </div>
   );
 }
 
 export default App;
-
-//  <div>
-//         <h2>Google Assistant</h2>
-//         <p>Google</p>
-//         <p>
-//           A conversational assistant available on Android phones, smart
-//           speakers, and displays. It answers questions, plays media, and manages
-//           your calendar and smart devices.
-//         </p>
-//       </div>
-
-//       <div>
-//         <h2>Alexa</h2>
-//         <p>Amazon</p>
-//         <p>
-//           Amazon's assistant powering Echo devices. It plays music, controls
-//           smart home gadgets, creates shopping lists, and supports thousands of
-//           third-party "skills".
-//         </p>
-//       </div>
