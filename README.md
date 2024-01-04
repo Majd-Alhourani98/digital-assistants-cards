@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Digital Assistants Cards
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small React app that displays three cards, one for each popular digital assistant: Siri, Google Assistant, and Alexa. Each card shows the assistant's logo, name, company, and a short description.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Reusable `Card` component that receives its data through props
+- Three cards rendered from the `App` component
+- Responsive-friendly card layout styled with plain CSS
+- Hover effect on each card
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React](https://react.dev/) 19
+- [Create React App](https://create-react-app.dev/) (`react-scripts` 5)
+- Plain CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- npm (comes with Node.js)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run the app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+The app opens at [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Other scripts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Command         | Description                  |
+| --------------- | ---------------------------- |
+| `npm start`     | Start the development server |
+| `npm run build` | Create a production build    |
+| `npm test`      | Run the tests                |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── images/
+│   ├── alexa.webp
+│   ├── google.png
+│   └── siri.webp
+├── App.js        # Renders the three assistant cards
+├── Card.js       # Reusable card component
+├── index.css     # Global and card styles
+└── index.js      # App entry point
+```
 
-## Learn More
+## The Card Component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`Card` accepts four props:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Prop          | Type   | Description                        |
+| ------------- | ------ | ---------------------------------- |
+| `title`       | string | Name of the assistant              |
+| `company`     | string | Company that makes the assistant   |
+| `description` | string | Short description of the assistant |
+| `image`       | string | Imported image used as the logo    |
 
-### Code Splitting
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```jsx
+import Card from "./Card";
+import siriImage from "./images/siri.webp";
 
-### Analyzing the Bundle Size
+<Card
+  title="Siri"
+  company="Apple"
+  description="Apple's voice assistant built into iPhone, iPad, Mac, and Apple Watch."
+  image={siriImage}
+/>;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Adding a New Assistant
 
-### Making a Progressive Web App
+1. Add the logo to `src/images/`.
+2. Import it in `App.js`.
+3. Add another `<Card />` inside `App` with its `title`, `company`, `description`, and `image` props.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is for learning purposes. Logos belong to their respective owners (Apple, Google, and Amazon).
