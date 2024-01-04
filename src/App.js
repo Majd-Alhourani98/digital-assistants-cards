@@ -6,7 +6,7 @@ import siriImage from "./images/siri.webp";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Card
         title="Siri"
         company="Apple"
