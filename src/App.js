@@ -1,6 +1,4 @@
-function Card(props) {
-  const { title, company, description } = props;
-
+function Card({ title, company, description }) {
   return (
     <div>
       <h2>{title}</h2>
