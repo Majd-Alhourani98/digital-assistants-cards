@@ -1,6 +1,7 @@
-function Card({ title, company, description }) {
+function Card({ title, company, description, image }) {
   return (
     <div>
+      <img src={image} alt={title + "logo"} />
       <h2>{title}</h2>
       <p>{company}</p>
       <p>{description}</p>
