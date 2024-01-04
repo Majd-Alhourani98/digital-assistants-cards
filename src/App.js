@@ -1,7 +1,5 @@
 function Card(props) {
-  const title = props.title;
-  const company = props.company;
-  const description = props.description;
+  const { title, company, description } = props;
 
   return (
     <div>
